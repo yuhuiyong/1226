@@ -1,0 +1,716 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+html {
+  font-size: 100px; }
+
+/**
+ * Yo框架全局Variables
+ -----------------------
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null；
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ *
+ * @class variables
+ * @module Yo
+ */
+/**
+ * Yo框架全局基础方法
+ -----------------------
+ * Yo内置了包括响应式方案，CSS3兼容性方案，厂商前缀方案，iconfont方案，flex布局等全局方法
+ *
+ * @class classes
+ * @module Yo
+ */
+/**
+ * 给需要的属性加厂家前缀
+ * @method prefix
+ * @param {String} $property 指定属性
+ * @param {String} $value 指定属性值
+ */
+/**
+ * 四则运算
+ * @method calc
+ * @param {String} $property 指定需要进行计算的CSS属性
+ * @param {String} $value 与原生CSS语法一致，使用方式如：@include calc(width, 100% - 0.1rem);
+ */
+/**
+ * 定义渐变色值
+ * @method gradient
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致
+ */
+/**
+ * 定义响应式方案
+ * @method responsive
+ * @param {String} $media 指定媒体查询条件
+ */
+/**
+ * 定义字体图标
+ * @method yofont
+ */
+/**
+ * 滤镜
+ * @method filter
+ * @param {String} $filter 取值与原生语法一致
+ */
+/**
+ * 定义UA默认外观
+ * @method appearance
+ * @param {String} $appearance 指定UA外观类型
+ */
+/**
+ * 定义是否可以选中元素
+ * @method user-select
+ * @param {String} $user-select 指定是否可以选中
+ */
+/**
+ * 定义背景图像缩放（Android Browser2.3.*还需要厂商前缀）
+ * @method background-size
+ * @param {String | Length} $background-size 指定背景图缩放值
+ */
+/**
+ * 定义背景裁减（Android Browser2.3.*还需要厂商前缀）
+ * @method background-clip
+ * @param {String} $background-clip 指定背景图缩放值
+ */
+/**
+ * 定义背景显示区域（Android Browser2.3.*还需要厂商前缀）
+ * @method background-origin
+ * @param {String} $background-origin 指定背景图缩放值
+ */
+/**
+ * 定义盒模型
+ * @method box-sizing
+ * @param {String} $box-sizing 的2个值分别为：content-box(标准盒模型) | border-box(怪异盒模型)
+ */
+/**
+ * 定义圆角
+ * @method border-radius
+ * @param {String} $border-radius 取值与原生语法一致
+ */
+/**
+ * 定义简单变换
+ * @method transform
+ * @param {String} $transform 取值与原生语法一致
+ */
+/**
+ * 定义变换原点
+ * @method transform-origin
+ * @param {String} $transform-origin 取值与原生语法一致
+ */
+/**
+ * 定义动画
+ * @method animation
+ * @param {String} $animation 取值与原生语法一致
+ */
+/**
+ * 定义补间
+ * @method transition
+ * @param {String} $transition 取值与原生语法一致
+ */
+/**
+ * 定义显示类型为伸缩盒
+ * @method flexbox
+ * @param {String} $flexbox 默认值：flex，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义root root-scroll
+ * @method root-scroll
+ * @param {String} $root-scroll 指定scroll类型，取值overflow属性的标准值
+ */
+/**
+ * 定义是否有滚动条
+ * @method overflow
+ * @param {String} $overflow 默认值：auto，取值与最新原生语法一致
+ */
+/**
+ * 生成矩形方法
+ * @method rect
+ * @param {Length} $width 定义矩形的长度
+ * @param {Length} $height 定义矩形的高度
+ */
+/**
+ * 生成正方形方法
+ * @method square
+ * @param {Length} $size 定义正方形的边长
+ */
+/**
+ * 生成圆形方法
+ * @method circle
+ * @param {Length} $size 定义圆的半径长度
+ * @param {Length} $radius 定义圆的圆角半径长度
+ */
+/**
+ * 生成全屏方法
+ * @method fullscreen
+ * @param {Integer} $z-index 定义层叠级别
+ */
+/**
+ * 清除浮动方案
+ * @method clearfix
+ */
+/**
+ * 链接处理方法
+ * @method link
+ * @param {Color} $color 定义链接颜色
+ */
+/**
+ * 强制换行方案
+ * @method wrap
+ */
+/**
+ * 单行文本溢出显示方案
+ * @method ellipsis
+ * @param {Boolen} $ellipsis 定义是否需要省略号
+ */
+/**
+ * 文字隐藏方案
+ * @method texthide
+ */
+/**
+ * 清除间隙方案-容器
+ * @method killspace
+ */
+/**
+ * 清除间隙方案-子级
+ * @method killspace-item
+ */
+/**
+ * 未知尺寸元素垂直居中解决方案-容器
+ * @method valign
+ */
+/**
+ * 未知尺寸元素垂直居中解决方案-子级
+ * @method valign-item
+ */
+/**
+ * 已经尺寸元素垂直居中解决方案
+ * @method alignment
+ * @param {Length} $width 居中元素的宽度
+ * @param {Length} $height 居中元素的高度
+ */
+/* border */
+/**
+ * Yo框架全局Reset
+ -----------------------
+ * Yo重置Mobile及高级浏览器上常见的差异
+ *
+ * @class reset
+ * @module Yo
+ */
+*,
+::before,
+::after {
+  -webkit-tap-highlight-color: transparent; }
+
+html {
+  background-color: #fafafa;
+  color: #212121;
+  font-size: 100px;
+  -webkit-user-select: none;
+  user-select: none; }
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif; }
+
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+  margin: 0;
+  padding: 0; }
+
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+  line-height: inherit;
+  font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+  font-size: inherit; }
+
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left; }
+
+ul,
+ol,
+menu {
+  list-style: none; }
+
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "\0020"; }
+
+textarea,
+pre,
+xmp {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+textarea {
+  resize: vertical; }
+
+input,
+textarea,
+button,
+select
+a {
+  outline: 0 none; }
+
+input,
+textarea,
+button,
+select {
+  color: inherit; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; }
+
+mark {
+  background-color: transparent; }
+
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none; }
+
+a,
+img {
+  -webkit-touch-callout: none; }
+
+a {
+  color: #00afc7; }
+
+.g-clear::after,
+.g-mod::after {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  content: "\0020"; }
+
+@font-face {
+  font-family: yofont;
+  src: url("http://source.qunarzz.com/fonts/yo/1.0.0/yofont.woff") format("woff"), url("http://source.qunarzz.com/fonts/yo/1.0.0/yofont.ttf") format("truetype"); }
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden; }
+  body .head {
+    height: 0.44rem;
+    background: #1A191E;
+    color: #ffffff; }
+    body .head ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex; }
+      body .head ul li:nth-child(1) {
+        position: absolute;
+        left: 0.15rem;
+        line-height: 0.44rem; }
+        body .head ul li:nth-child(1) i {
+          font-size: 0.22rem; }
+        body .head ul li:nth-child(1) span {
+          font-size: 0.16rem; }
+      body .head ul li:nth-child(2) {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px;
+        font-size: 0.18rem;
+        line-height: 0.44rem;
+        text-align: center;
+        font-weight: 500; }
+      body .head ul li:nth-child(3) {
+        position: absolute;
+        right: 0.15rem;
+        top: 0px;
+        line-height: 0.44rem; }
+  body .section {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    background: #ffffff;
+    overflow: hidden;
+    width: 100%; }
+    body .section .movie_message {
+      background: #C9C0BF; }
+      body .section .movie_message dl {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        padding: 0.12rem 0.1rem 0.1rem 0.07rem; }
+        body .section .movie_message dl dt {
+          width: 1.02rem;
+          height: 1.48rem; }
+          body .section .movie_message dl dt img {
+            width: 100%;
+            height: 100%; }
+        body .section .movie_message dl dd {
+          margin-left: 0.12rem; }
+          body .section .movie_message dl dd h2 {
+            font-size: 0.14rem; }
+            body .section .movie_message dl dd h2 b {
+              font-size: 0.12rem;
+              margin-left: 0.05rem; }
+            body .section .movie_message dl dd h2 span {
+              margin-left: 0.05rem;
+              font-size: 0.1rem;
+              height: 0.14rem;
+              width: 0.22rem;
+              display: inline-block;
+              background: #A4AECF;
+              border-radius: 0.02rem;
+              color: #E7ECF8;
+              line-height: 0.14rem;
+              text-align: center; }
+          body .section .movie_message dl dd p:nth-child(2) span {
+            color: #666666; }
+            body .section .movie_message dl dd p:nth-child(2) span:nth-child(1) {
+              width: 0.17rem;
+              height: 0.2rem;
+              display: inline-block; }
+              body .section .movie_message dl dd p:nth-child(2) span:nth-child(1) img {
+                width: 100%;
+                height: 100%; }
+            body .section .movie_message dl dd p:nth-child(2) span:nth-child(2) {
+              font-size: 0.1rem; }
+          body .section .movie_message dl dd p:nth-child(3) {
+            height: 0.22rem;
+            font-size: 0.1rem;
+            color: #999999;
+            line-height: 0.22rem;
+            margin-top: 0.02rem; }
+          body .section .movie_message dl dd p:nth-child(4), body .section .movie_message dl dd p:nth-child(5) {
+            font-size: 0.12rem;
+            color: #6B6A6A;
+            margin-top: 0.05rem; }
+          body .section .movie_message dl dd p:nth-child(6) span {
+            margin-top: 0.1rem;
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.24rem;
+            border: 1px solid #E8E5E5;
+            box-sizing: border-box;
+            border-radius: 0.03rem;
+            background: #DFD9DB;
+            line-height: 0.24rem;
+            text-align: center;
+            color: #ffffff; }
+            body .section .movie_message dl dd p:nth-child(6) span:nth-child(2) {
+              margin-left: 0.1rem; }
+    body .section .jieshao {
+      height: 1.1rem;
+      background: #ffffff;
+      -webkit-transition: height 0.5s; }
+      body .section .jieshao .title {
+        margin-left: 0.1rem;
+        height: 0.45rem;
+        line-height: 0.45rem; }
+        body .section .jieshao .title h2 {
+          display: inline-block; }
+      body .section .jieshao .people_mes {
+        -webkit-transition: height 0.5s;
+        margin-left: 0.1rem;
+        height: 0.44rem;
+        overflow: hidden; }
+        body .section .jieshao .people_mes p {
+          margin-right: 0.15rem; }
+      body .section .jieshao .icon {
+        width: 100%; }
+        body .section .jieshao .icon i {
+          width: 100%;
+          font-size: 0.22rem;
+          font-style: normal;
+          color: #DDDDDD;
+          text-align: center; }
+    body .section .img_scroll {
+      width: 100%;
+      background: #ffffff;
+      padding-top: 0.05rem;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid #EEEEEE;
+      box-sizing: border-box; }
+      body .section .img_scroll .tag-list {
+        height: 0.79rem;
+        position: relative;
+        display: block;
+        font-size: 0;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        white-space: nowrap; }
+        body .section .img_scroll .tag-list .tag {
+          width: 0.69rem;
+          height: 0.79rem;
+          display: inline-block; }
+          body .section .img_scroll .tag-list .tag img {
+            width: 100%;
+            height: 100%; }
+          body .section .img_scroll .tag-list .tag:not(:nth-child(1)) {
+            margin-left: 0.1rem; }
+    body .section .pingjia {
+      margin-top: 0.1rem;
+      background: #ffffff; }
+      body .section .pingjia h2 {
+        height: 0.52rem;
+        line-height: 0.52rem; }
+        body .section .pingjia h2 span:nth-child(1) {
+          margin-left: 0.1rem;
+          color: #565656; }
+        body .section .pingjia h2 span:nth-child(2) {
+          float: right;
+          margin-right: 0.1rem;
+          color: #1B97FF; }
+      body .section .pingjia .wen_list {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        padding-left: 0.15rem;
+        position: relative; }
+        body .section .pingjia .wen_list li {
+          height: 0.24rem; }
+          body .section .pingjia .wen_list li:nth-child(1) {
+            width: 0.23rem;
+            height: 0.23rem; }
+            body .section .pingjia .wen_list li:nth-child(1) img {
+              width: 100%;
+              height: 100%; }
+          body .section .pingjia .wen_list li:nth-child(2) {
+            line-height: 0.24rem;
+            margin-left: 0.1rem;
+            color: #666666; }
+            body .section .pingjia .wen_list li:nth-child(2) i {
+              color: #f74d4d; }
+            body .section .pingjia .wen_list li:nth-child(2) span {
+              margin-right: 0.1rem; }
+          body .section .pingjia .wen_list li:last-child {
+            position: absolute;
+            right: 0.1rem;
+            top: 0;
+            line-height: 0.24rem; }
+            body .section .pingjia .wen_list li:last-child i.active {
+              color: #f74d4d; }
+      body .section .pingjia .count {
+        margin-left: 0.35rem;
+        margin-top: 0.1rem; }
+        body .section .pingjia .count p:nth-child(1) {
+          color: #333333;
+          margin-right: 0.3rem; }
+        body .section .pingjia .count p:nth-child(2) {
+          margin-top: 0.05rem;
+          color: #BBBBBB; }
+  body .foot {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 0.44rem;
+    background: #ffffff; }
+    body .foot span {
+      display: inline-block;
+      background: #29CC6D;
+      color: #ffffff;
+      width: 95%;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      text-align: center;
+      margin: 0.03rem auto;
+      border-radius: 0.05rem;
+      font-size: 0.2rem; }
+
+.circle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.2rem;
+  background: #000000;
+  opacity: 0.6;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem; }
+  .circle b {
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.26rem;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 50%; }
+  .circle .list_bottom {
+    width: 0;
+    -webkit-transition: width 0.5s;
+    height: 0.45rem;
+    display: inline-block; }
+    .circle .list_bottom ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      height: 0.45rem; }
+      .circle .list_bottom ul li {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px;
+        color: #ffffff;
+        font-size: 0.14rem;
+        text-align: center; }
+        .circle .list_bottom ul li i, .circle .list_bottom ul li span {
+          display: block;
+          text-align: center;
+          line-height: 0.2rem; }
+
+/*# sourceMappingURL=style.css.map */
